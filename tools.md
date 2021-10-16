@@ -14,10 +14,12 @@
         redare2
     ROPgadget
     libc-database: https://libc.blukat.me/
+    glibc-all-in-one
     patchelf:
         Change libc:
-        patchelf --set-interpreter /libc-?/?bit/ld.so.2
-        patchelf --replace-needed libc.so.6 /libc-?/?bit/libc.so.6
+        patchelf --set-rpath ~/utils/glibc-all-in-one/libs/
+        patchelf --set-interpreter ~/utils/glibc-all-in-one/libs/$ld
+        
 
 # Web
     burpsuite
