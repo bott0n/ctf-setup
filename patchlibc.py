@@ -25,9 +25,8 @@ ver = input("[?] What is the version of the libc? (2.23/2.27/2.31/2.34) ")
 if ver not in vers:
     print("[x] Invalid libc version!")
     exit(-1)
-cwd = os.getcwd()
-print(cwd)
+
 # patch file
-print(f"patchelf set-interpreter libc.so.6  ~/tools/glibc-all-in-one/libs/x{arch}_{ver}/ld-{ver}.so {cwd}/{filename}_patched")
+cwd = os.getcwd()
 os.system(f"patchelf --set-interpreter ~/tools/glibc-all-in-one/libs/x{arch}_{ver}/ld-{ver}.so {cwd}/{filename}_patched")
 os.system(f"patchelf --set-rpath ~/tools/glibc-all-in-one/libs/x{arch}_{ver} {cwd}/{filename}_patched")
