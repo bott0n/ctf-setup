@@ -12,7 +12,7 @@ RUN apt-get install -y sudo locales python3 python3-pip python3-dev git gcc gcc-
 RUN python3 -m pip install -U pip && \
     python3 -m pip install --no-cache-dir \
     ropgadget \
-    pwntools \
+    pwntools==4.2.1 \
     z3-solver \
     ropper \
     unicorn \

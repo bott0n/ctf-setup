@@ -5,6 +5,7 @@ HOST = '127.0.0.1'
 PORT = 1234
 context.arch = 'amd64' # i386/amd64
 context.log_level = 'debug'
+context.terminal = ['tmux','splitw','-h']
 elf = ELF(TARGET)
 
 if len(sys.argv) > 1 and sys.argv[1] == 'remote':
