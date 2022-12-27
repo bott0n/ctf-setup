@@ -1,5 +1,5 @@
 # OS version
-FROM ubuntu:20.04
+FROM ubuntu:22.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG en_US.UTF-8  
@@ -8,7 +8,7 @@ ENV LC_ALL en_US.UTF-8
 
 RUN apt-get update -y
 RUN apt-get install -y binutils
-RUN apt-get install -y sudo locales python3 python3-pip python3-dev git gcc gcc-multilib gdb vim ruby gem tmux wget nmap netcat xinetd socat netcat 
+RUN apt-get install -y sudo locales python3 python3-pip python3-dev git gcc gcc-multilib gdb vim ruby gem tmux wget nmap xinetd socat 
 
 RUN python3 -m pip install -U pip && \
     python3 -m pip install --no-cache-dir \
