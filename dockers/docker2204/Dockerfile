@@ -1,5 +1,5 @@
 # OS version
-FROM ubuntu:22.10
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG en_US.UTF-8  
@@ -7,11 +7,12 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8  
 
 RUN apt-get update -y
-RUN apt-get install -y binutils
+RUN apt-get install -y binutils file
 RUN apt-get install -y sudo locales python3 python3-pip python3-dev git gcc gcc-multilib gdb vim ruby gem tmux wget nmap xinetd socat 
 
 RUN python3 -m pip install -U pip && \
     python3 -m pip install --no-cache-dir \
+    pyelftools==0.29 \
     ropgadget \
     pwntools==4.8.0 \
     z3-solver \

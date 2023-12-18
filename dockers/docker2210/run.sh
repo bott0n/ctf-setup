@@ -1,6 +1,6 @@
 #!/bin/bash
 
-check_name=`docker ps -a | grep ctf2004`
+check_name=`docker ps -a | grep ctf2210`
 
 if [[ -z $check_name ]]; then
     echo "==> Creating a new container!"
